@@ -1,0 +1,33 @@
+name: Build and Publish Libraries
+
+on:
+  push:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@jp-sft'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Library
+        run: npm run build
+
+      - name: Publish to GitHub Packages
+        run: npm publish dist/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
