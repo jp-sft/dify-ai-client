@@ -5,7 +5,7 @@
   "author": "OpenAPI-Generator Contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BRM-Teck/dify-ai-client.git"
+    "url": "https://github.com/BRM-Teck/dify-ai-client.git"
   },
   "keywords": [
     "axios",
