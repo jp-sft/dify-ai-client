@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/BRM-Teck/dify-ai-client.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "keywords": [
     "axios",
     "typescript",
